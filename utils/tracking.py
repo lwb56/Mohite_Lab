@@ -35,9 +35,23 @@ def extract(filename):
 
     data = np.concatenate((q.reshape(-1,1),I.reshape(-1,1)), axis = 1)
 
+    # an matrix of [Q,I] where Q is the scattering vector and I is the intensity
     return data
 
-def gaus_fit1(data,int_guess): 
+
+# this is the fitting function for the gaussian fit using lmfit package.
+def gaus_fit1(data,int_guess):
+    '''
+    This function will fit and plot the raw data curve vs fitted curve.
+
+    INPUT:
+        data - an matrix of n x 2 where the first column is the Q value and the second is the intensity
+        int_guess - a initial guess list [center value, sigma, and amplitude]
+
+    OUTPUT:
+        out
+
+    ''' 
 
     x = data[:,0]
     y  =data[:,1]
