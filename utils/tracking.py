@@ -284,7 +284,7 @@ def background_model(data,int_guess, linear= True):
 
 
 
-def plotting_model(data, model):
+def plotting_model(data, model, title = 'Subtracted Background'):
     x = data[:,0]
     y  =data[:,1]
       
@@ -295,6 +295,7 @@ def plotting_model(data, model):
     plt.ylabel('Intensity (a.u.)',fontsize = 40)
     plt.xlabel(r"${Q(A^{-1})}$",fontsize = 40)
     plt.rc('axes', linewidth=2.5)
+    plt.title(title)
     # ax.axes.yaxis.set_ticks([])
     # ax.xaxis.set_major_locator(MultipleLocator(1))
     # ax.xaxis.set_minor_locator(MultipleLocator(.1))
